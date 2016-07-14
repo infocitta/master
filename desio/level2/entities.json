@@ -1,0 +1,78 @@
+﻿[
+{
+  "Version": 1,
+  "ID": "9089e0d4-d355-43ab-a3a0-99f294a0405a",
+  "Name": "ASILO NIDO COMUNALE VIA ADAMELLO",
+  "Alias": "alias_entity",
+  "Level1": [
+    {
+      "Value": "Desio",
+      "Alias": "desio"
+    }
+  ],
+  "Level2": [
+    {
+      "Value": "Asilo nido",
+      "Alias": "asilo_nido"
+    }
+  ],
+  "Adresses": [
+    {
+      "Title": "Indirizzo",
+      "Value": "VIA ADAMELLO DESIO",
+      "Note": "",
+      "Latitude": "45.609328",
+      "Longitude": "9.203835"
+    }
+  ],
+  "Contacts": [
+    {
+      "Title": "Telefono",
+      "Value": "0362 392305",
+      "Note": "",
+      "Type": 0
+    },
+    {
+      "Title": "Email",
+      "Value": "scuoleinfanziadesio@comune.desio.mb.it",
+      "Note": "",
+      "Type": 1
+    }
+  ]
+},
+{
+  "Version": 1,
+  "ID": "71409751-62fd-4df8-a4c0-1ed1e267c559",
+  "Name": "Ambulatorio Veterinario Gaia",
+  "Alias": "alias_entity",
+  "Level1": [
+    {
+      "Value": "Desio",
+      "Alias": "desio"
+    }
+  ],
+  "Level2": [
+    {
+      "Value": "Veterinario",
+      "Alias": "veterinario"
+    }
+  ],
+  "Adresses": [
+    {
+      "Title": "Studio",
+      "Value": "Via per Binzago, 50, 20832 Desio MB",
+      "Note": "",
+      "Latitude": "45.623661",
+      "Longitude": "9.186548"
+    }
+  ],
+  "Contacts": [
+    {
+      "Title": "Telefono",
+      "Value": "0362 620646",
+      "Note": "",
+      "Type": 0
+    }
+  ]
+}
+]

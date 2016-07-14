@@ -1,0 +1,116 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:url" content="http://www.infocitta.info" />
+<meta property="og:type" content="website" /><meta property="og:title" content="InfoCittà" />
+<meta property="og:description" content="Tutte le informazioni della tua città sempre a portata di mano" />
+<meta property="og:image" content="https://raw.githubusercontent.com/infocitta/infocitta.github.io/master/logo.png" />
+<meta name="keywords" content="infocitta,informazioni" />
+<meta name="description" content="Le informazioni della tua città  in un unico posto" />
+<meta property="fb:app_id" content="591996370950973" />
+<link rel="shortcut icon" href="../logo_notext.png" type="image/png" />
+<link rel="icon" href="../logo_notext.png" type="image/png" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/cookie-bar/1/cookiebar-latest.min.js"></script>		
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+<link rel="stylesheet" href="../style.css" />
+<script src="app.js"></script>
+<script src="../dirPagination.js"></script>
+<title>Desio - InfoCittà</title>  
+</head>
+
+<body>
+    <div id="fb-root"></div>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/it_IT/sdk.js#xfbml=1&version=v2.5&appId=591996370950973";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="container">
+
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+
+                        <a class="navbar-brand" href="#">InfoCittà</a>
+                    </div>
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="..">Home</a></li>
+						<li class="active"><a href="#">Categorie</a></li>
+
+                        
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                       
+                    </ul>
+
+                </div>
+            </nav>
+            <div class="page-header" style="margin-top: 5px;margin-bottom: 5px;">
+
+           <h1>Desio</h1>
+            </div>
+        </div>
+
+
+<div class="container">
+
+
+        <div ng-controller="MyController" class="my-controller">
+          <div class="row">
+            <div class="col-xs-4">
+              <label for="search">Ricerca:</label>
+              <input ng-model="q" id="search" class="form-control" placeholder="Testo ricerca">
+            </div>
+
+          </div>
+          <br>
+
+<div class="list-group">
+
+<a dir-paginate="item in items | orderBy:'Value' | filter:q | itemsPerPage: pageSize" current-page="currentPage"  href="{{ item.Alias }}\" class="list-group-item"><span><strong>{{ item.Value }}</strong></span></a>
+
+</div>
+		  
+
+  
+
+
+        <div ng-controller="OtherController" class="other-controller">
+          <div class="text-center">
+          <dir-pagination-controls boundary-links="true" on-page-change="pageChangeHandler(newPageNumber)" template-url="../dirPagination.tpl.html"></dir-pagination-controls>
+          </div>
+        </div>
+      </div>
+   
+ 
+</div>  
+<div class="container">  
+        <div class="panel panel-danger">
+      <div class="panel-heading">Clausola di responsabilità</div>
+      <div class="panel-body">
+<p>Qualora dovessero essere segnalati degli errori, si provvederà a correggerli.</p>
+<p>Non sempre le informazioni inserite sono necessariamente esaurienti, complete, precise o aggiornate.</p>
+<p>Non si assume alcuna responsabilità per quanto riguarda le informazioni contenute nel sito.</p>
+<p>Non si assume alcuna responsabilità per gli eventuali problemi derivanti dall'utilizzazione dei dati inseriti del presente sito.</p>
+<p>Inoltrate le vostre richieste sulla <a href="https://www.facebook.com/infocitta">Pagina Facebook InfoCittà</a></p>
+</div>
+</div>
+</div>  
+  
+</body>
+
+</html>
