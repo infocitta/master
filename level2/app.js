@@ -19,6 +19,7 @@ console.log('level1');
     .then(function(response) {
     	console.log('load');
         $scope.level1 = response.data;
+        console.log($scope.level1);
     });	
 	
   $scope.pageChangeHandler = function(num) {
