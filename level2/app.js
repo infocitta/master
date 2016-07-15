@@ -7,7 +7,7 @@ function MyController($scope, $http) {
   $scope.currentPage = 1;
   $scope.pageSize = 20;
   $scope.items = [];
-
+  $scope.level1 = [];
  $http.get("level2.json")
     .then(function(response) {
         $scope.items = response.data;
