@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html ng-app="myApp">
+<html ng-app="myApp" ng-controller="MyController" class="my-controller">
 <head>
 <!-- meta og -->	
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -65,7 +65,7 @@
             </nav>
             <div class="page-header" style="margin-top: 5px;margin-bottom: 5px;">
 
-           <h1>{{ level1.length }}{{ level1[0].Value }}</h1>
+           <h1>{{ level1.Value }}</h1>
             </div>
         </div>
 
@@ -73,7 +73,7 @@
 <div class="container">
 
 
-        <div ng-controller="MyController" class="my-controller">
+        <div>
           <div class="row">
             <div class="col-xs-4">
               <label for="search">Ricerca:</label>
