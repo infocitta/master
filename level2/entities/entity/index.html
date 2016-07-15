@@ -70,6 +70,7 @@
     <div class="panel panel-default" ng-repeat="a in entity.Adresses">
         <div class="panel-heading">
             <h1 class="panel-title">{{a.Title}}</h1>
+            <a class="btn btn-info pull-right" role="button" href="https://github.com/infocitta/dataset/blob/master/{{a.ID}}.json"><i class="fa fa-github" aria-hidden="true"></i>Scheda</a>
         </div>
         <div class="panel-body"><a class="btn btn-info pull-right" role="button" href="https://maps.google.it/maps?q={{a.Latitude}},{{a.Longitude}}"><i class="fa fa-map-o" aria-hidden="true"></i> Mappa</a>
 {{a.Value}}<small>{{a.Note}}</small></div>
