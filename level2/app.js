@@ -8,13 +8,16 @@ function MyController($scope, $http) {
   $scope.pageSize = 20;
   $scope.items = [];
   $scope.level1 = [];
+  console.log('level2');
  $http.get("level2.json")
     .then(function(response) {
+    	console.log('load');
         $scope.items = response.data;
     });
-
+console.log('level1');
  $http.get("level1.json")
     .then(function(response) {
+    	console.log('load');
         $scope.level1 = response.data;
     });	
 	
