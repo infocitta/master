@@ -11,9 +11,9 @@ function MyController($scope, $http) {
     .then(function(response) {
         $scope.items = response.data;
     });
- $http.get("level1.json")
+ $http.get("level.json")
     .then(function(response) {
-        $scope.level1 = response.data;
+        $scope.level = response.data;
     });	
 	
   $scope.pageChangeHandler = function(num) {
