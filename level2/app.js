@@ -7,6 +7,7 @@ function MyController($scope, $http) {
   $scope.currentPage = 1;
   $scope.pageSize = 20;
   $scope.items = [];
+  $scope.level1 = [];
  
  $http.get("level2.json")
     .then(function(response) {
@@ -15,7 +16,7 @@ function MyController($scope, $http) {
 
  $http.get("level1.json")
     .then(function(response) {
-        $scope.item = response.data;
+        $scope.level1 = response.data;
     });	
 	
   $scope.pageChangeHandler = function(num) {
