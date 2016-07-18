@@ -1,107 +1,241 @@
-{
+﻿{
   "Version": 1,
-  "ID": "ce24d753-9b03-4992-8418-03809f2dac62",
-  "Name": "Dott Casati Mauro",
-  "Alias": "dott_casati_mauro",
-  "Note": "",
+  "ID": "caa980b0-a9e2-48ad-8b30-eb7ed16a4274",
+  "Name": "Festività Italiane",
+  "Alias": "festività_italiane",
+  "Note": "Calendar Google",
   "Image": "",
   "Level1": [
     {
-      "Value": "Desio",
-      "Alias": "desio"
+      "Value": "~ Utilità",
+      "Alias": "utility"
     }
   ],
   "Level2": [
     {
-      "Value": "Pediatra",
-      "Alias": "pediatra"
+      "Value": "Calendario",
+      "Alias": "calendario"
     }
   ],
-  "Adresses": [
-    {
-      "Title": "Studio",
-      "Value": "Via Giuseppe Garibaldi, 35 20832 Desio MB",
-      "Latitude": "45.616149",
-      "Longitude": "9.206877",
-      "Note": ""
-    }
-  ],
-  "Contacts": [
-    {
-      "Title": "Per appuntamento",
-      "Value": "0362/301528",
-      "Note": "da lun a ven dalle 08.00 alle 10.00 ",
-      "Type": 0
-    },
-    {
-      "Title": "per consigli, informazioni e richieste:",
-      "Value": "0362/301528",
-      "Note": "da lun a ven durante l'orario di ambulatorio ",
-      "Type": 0
-    }
-  ],
+  "Adresses": [],
+  "Contacts": [],
   "Calendar": [
     {
-      "Title": "Orario ambulatorio",
+      "Title": "Festività Italiane",
       "Note": "",
-      "WeekDays": [
+      "WeekDays": [],
+      "Days": [
         {
-          "WeekDay": 1,
-          "Schedules": [
-            {
-              "StartTime": "14:00",
-              "EndTime": "16:00",
-              "Note": ""
-            },
-            {
-              "StartTime": "09:30",
-              "EndTime": "12:30",
-              "Note": ""
-            }
-          ]
+          "Date": "2017-08-15T00:00:00",
+          "Note": "Assunzione / Ferragosto",
+          "Schedules": []
         },
         {
-          "WeekDay": 2,
-          "Schedules": [
-            {
-              "StartTime": "09:00",
-              "EndTime": "13:00",
-              "Note": ""
-            }
-          ]
+          "Date": "2016-12-08T00:00:00",
+          "Note": "Immacolata",
+          "Schedules": []
         },
         {
-          "WeekDay": 3,
-          "Schedules": [
-            {
-              "StartTime": "14:00",
-              "EndTime": "18:00",
-              "Note": ""
-            }
-          ]
+          "Date": "2015-06-02T00:00:00",
+          "Note": "Festa della Repubblica",
+          "Schedules": []
         },
         {
-          "WeekDay": 4,
-          "Schedules": [
-            {
-              "StartTime": "09:00",
-              "EndTime": "13:00",
-              "Note": ""
-            }
-          ]
+          "Date": "2017-01-06T00:00:00",
+          "Note": "Epifania",
+          "Schedules": []
         },
         {
-          "WeekDay": 5,
-          "Schedules": [
-            {
-              "StartTime": "14:00",
-              "EndTime": "18:00",
-              "Note": ""
-            }
-          ]
+          "Date": "2017-12-31T00:00:00",
+          "Note": "San Silvestro",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-12-25T00:00:00",
+          "Note": "Natale",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-03-25T00:00:00",
+          "Note": "Venerdi Santo",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-04-03T00:00:00",
+          "Note": "Venerdi Santo",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-01-01T00:00:00",
+          "Note": "Capodanno",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-04-06T00:00:00",
+          "Note": "Lunedì di Pasquetta",
+          "Schedules": []
+        },
+        {
+          "Date": "2017-04-17T00:00:00",
+          "Note": "Lunedì di Pasquetta",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-06-02T00:00:00",
+          "Note": "Festa della Repubblica",
+          "Schedules": []
+        },
+        {
+          "Date": "2017-11-01T00:00:00",
+          "Note": "Tutti i Santi",
+          "Schedules": []
+        },
+        {
+          "Date": "2017-04-16T00:00:00",
+          "Note": "Pasqua",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-05-01T00:00:00",
+          "Note": "Festa del Lavoro",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-11-01T00:00:00",
+          "Note": "Tutti i Santi",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-08-15T00:00:00",
+          "Note": "Assunzione / Ferragosto",
+          "Schedules": []
+        },
+        {
+          "Date": "2017-12-26T00:00:00",
+          "Note": "Santo Stefano",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-12-31T00:00:00",
+          "Note": "San Silvestro",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-01-01T00:00:00",
+          "Note": "Capodanno",
+          "Schedules": []
+        },
+        {
+          "Date": "2017-12-08T00:00:00",
+          "Note": "Immacolata",
+          "Schedules": []
+        },
+        {
+          "Date": "2017-04-25T00:00:00",
+          "Note": "Liberazione",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-03-27T00:00:00",
+          "Note": "Pasqua",
+          "Schedules": []
+        },
+        {
+          "Date": "2017-01-01T00:00:00",
+          "Note": "Capodanno",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-12-08T00:00:00",
+          "Note": "Immacolata",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-11-01T00:00:00",
+          "Note": "Tutti i Santi",
+          "Schedules": []
+        },
+        {
+          "Date": "2017-12-25T00:00:00",
+          "Note": "Natale",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-12-31T00:00:00",
+          "Note": "San Silvestro",
+          "Schedules": []
+        },
+        {
+          "Date": "2017-05-01T00:00:00",
+          "Note": "Festa del Lavoro",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-08-15T00:00:00",
+          "Note": "Assunzione / Ferragosto",
+          "Schedules": []
+        },
+        {
+          "Date": "2017-04-14T00:00:00",
+          "Note": "Venerdi Santo",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-05-01T00:00:00",
+          "Note": "Festa del Lavoro",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-04-25T00:00:00",
+          "Note": "Liberazione",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-12-25T00:00:00",
+          "Note": "Natale",
+          "Schedules": []
+        },
+        {
+          "Date": "2017-06-02T00:00:00",
+          "Note": "Festa della Repubblica",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-01-06T00:00:00",
+          "Note": "Epifania",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-04-05T00:00:00",
+          "Note": "Pasqua",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-12-26T00:00:00",
+          "Note": "Santo Stefano",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-12-26T00:00:00",
+          "Note": "Santo Stefano",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-03-28T00:00:00",
+          "Note": "Lunedì di Pasquetta",
+          "Schedules": []
+        },
+        {
+          "Date": "2016-01-06T00:00:00",
+          "Note": "Epifania",
+          "Schedules": []
+        },
+        {
+          "Date": "2015-04-25T00:00:00",
+          "Note": "Liberazione",
+          "Schedules": []
         }
-      ],
-      "Days": []
+      ]
     }
   ],
   "Notes": [],
