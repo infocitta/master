@@ -107,8 +107,8 @@
     </div>
 
 </div>
-<div class="container" ng-repeat="tcal in entity.Calendar | orderBy:'Title'">
-	<div class="panel panel-default">
+<div class="container">
+	<div class="panel panel-default"  ng-repeat="tcal in entity.Calendar | orderBy:'Title'">
 	<div class="panel-heading">{{tcal.Title}}</div>
 	<div class="panel-body">
 		<div class="panel panel-default" ng-repeat="wday in tcal.WeekDays | orderBy:'WeekDay'">
