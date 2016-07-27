@@ -111,7 +111,7 @@
 	<div class="panel panel-default"  ng-repeat="tcal in entity.Calendar | orderBy:'Title'">
 	<div class="panel-heading">{{tcal.Title}}</div>
 	<div class="panel-body">
-		<div class="panel panel-default" ng-repeat="day in tcal.Days | orderBy:'Date'" ng-show="day.Date => today">
+		<div class="panel panel-default" ng-repeat="day in tcal.Days | orderBy:'Date'" ng-show="day.Date > today">
 		<div class="panel-heading">{{day.Date| date:'dd/MM/yyyy'}}
 		<p ng-hide="day.Note==''"><small>{{day.Note}}</small></p>
 		</div>
