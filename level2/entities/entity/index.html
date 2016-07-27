@@ -112,7 +112,7 @@
 	<div class="panel-heading">{{tcal.Title}}</div>
 	<div class="panel-body">
 		<div class="panel panel-default" ng-repeat="day in tcal.Days | orderBy:'Days'">
-		<div class="panel-heading">{{day.Date}}
+		<div class="panel-heading">{{day.Date| date:'dd/MM/yyyy'}}
 		<p ng-hide="day.Note==''"><small>{{day.Note}}</small></p>
 		</div>
 		<div class="panel-body" ng-repeat="sch in wday.Schedules | orderBy:'StartTime'">{{sch.StartTime}} - {{sch.EndTime}}<p ng-hide="sch.Note==''"><small>{{sch.Note}}</small></p></div>
