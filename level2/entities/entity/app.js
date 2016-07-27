@@ -8,6 +8,7 @@ function MyController($scope, $http) {
   $scope.pageSize = 20;
   $scope.weekdayname = ['','Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato','Domenica'];
   $scope.today= new Date();
+  log.console($scope.today);
  $http.get("entity.json")
     .then(function(response) {
         $scope.entity = response.data;
