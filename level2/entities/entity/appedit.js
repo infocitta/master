@@ -13,7 +13,15 @@ function MyController($scope, $http) {
         $scope.entity = response.data;
     });
 
-
+$scope.addAddr=function () {
+	$scope.entity.Contact.push({Value: ''});
+}
+	
+$scope.removeContact = function(index) {
+	if (confirm('Corfema eliminazione?')) {
+		$scope.entity.Contact.splice(index, 1);     
+	} 	 
+}
 	
   $scope.pageChangeHandler = function(num) {
       

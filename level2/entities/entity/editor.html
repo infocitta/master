@@ -93,7 +93,7 @@
 <div class="container">
 
 <div class="panel panel-default">
-	<div class="panel-heading">Indirizzi</div>
+	<div class="panel-heading">Indirizzi <button class="btn btn-success" ng-click="addAddr" >Aggiungi</button></div>
 	<div class="panel-body">
 		<div class="panel panel-default" ng-repeat="a in entity.Adresses">
 			<div class="panel-body">
@@ -116,7 +116,8 @@
 				<div class="form-group">
 					<label for="aNote">Note:</label>
 					<input type="text" class="form-control" id="aNote" ng-model="a.Note">
-				</div>					
+				</div>
+				<button class="btn btn-danger" ng-click="removeAddr($index)">Rimuovi</button>				
 			</div>
 		</div>
 	</div>
