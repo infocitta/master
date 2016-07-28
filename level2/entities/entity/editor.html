@@ -1,0 +1,165 @@
+﻿<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="MyController" class="my-controller">
+
+<head>
+<!-- meta og -->	
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta property="og:url" content="https://infocitta.github.io/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="InfoCittà" />
+<meta property="og:description" content="Tutte le informazioni della tua città sempre a portata di mano" />
+<meta property="og:image" content="https://raw.githubusercontent.com/infocitta/infocitta.github.io/master/logo.png" />
+<meta name="keywords" content="infocitta,informazioni" />
+<meta name="description" content="Le informazioni della tua città  in un unico posto" />
+<meta property="fb:app_id" content="591996370950973" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<link rel="shortcut icon" href="../../../logo_notext.png" type="image/png" />
+<link rel="icon" href="../../../logo_notext.png" type="image/png" />
+
+<!-- riferimenti remoti -->
+<!-- jquery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<!-- angular -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+<!-- riferimenti locali -->
+<link rel="stylesheet" href="../../../style.css" />
+<script src="appedit.js"></script>
+
+<!-- titolo -->
+<title>{{ entity.Name }} - InfoCittà</title>  
+</head>
+
+<body>
+
+<div class="container">
+<!-- menu -->	
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="../../..">InfoCittà</a>
+		</div>
+	<ul class="nav navbar-nav">
+                        <li><a href="../../..">Home</a></li>
+
+			<li class="active"><a href="#">{{ entity.Name }}</a></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<form style="padding-top: 13px;" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+			<input type="hidden" name="cmd" value="_s-xclick">
+			<input type="hidden" name="hosted_button_id" value="C3JEBSSYR4GBQ">
+			<input type="image" src="https://www.paypalobjects.com/it_IT/IT/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal è il metodo rapido e sicuro per pagare e farsi pagare online.">
+			<img alt="" border="0" src="https://www.paypalobjects.com/it_IT/i/scr/pixel.gif" width="1" height="1">
+		</form>                       
+	</ul>
+	</div>
+</nav>
+<!-- fine menu -->
+</div>
+<div class="container">
+<div class="panel panel-default">
+  <div class="panel-heading"><strong>Dati Entità</strong></div>
+  <div class="panel-body">
+	<div class="form-group">
+	  <label for="ID">ID:</label>
+	  <input type="text" class="form-control" id="ID" ng-model="entity.ID" disabled>
+	</div>    
+	<div class="form-group">
+	  <label for="Name">Nome Entità:</label>
+	  <input type="text" class="form-control" id="Name" ng-model="entity.Name">
+	</div>  
+	<div class="form-group">
+	  <label for="Alias">Alias:</label>
+	  <input type="text" class="form-control" id="Alias" ng-model="entity.Alias">
+	</div>  	
+	<div class="form-group">
+	  <label for="Note">Note:</label>
+	  <input type="text" class="form-control" id="Note" ng-model="entity.Note">
+	</div>
+	<div class="form-group">
+	  <label for="Image">Immagine:</label>
+	  <input type="text" class="form-control" id="Latitude" ng-model="entity.Image">
+	</div>
+  </div>
+</div>
+
+
+</div>
+
+
+<div class="container">
+
+<div class="panel panel-default">
+	<div class="panel-heading">Indirizzi</div>
+	<div class="panel-body">
+		<div class="panel panel-default" ng-repeat="a in entity.Adresses">
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="aTitle">Tipo indirizzo:</label>
+					<input type="text" class="form-control" id="aTitle" ng-model="a.Title">
+				</div>  
+				<div class="form-group">
+					<label for="aValue">Indirizzo:</label>
+					<input type="text" class="form-control" id="aValue" ng-model="a.Value">
+				</div>	
+				<div class="form-group">
+					<label for="aLatitude">Latitude:</label>
+					<input type="text" class="form-control" id="aLatitude" ng-model="a.Latitude">
+				</div>	
+				<div class="form-group">
+					<label for="aLongitude">Longitude:</label>
+					<input type="text" class="form-control" id="aLongitude" ng-model="a.Longitude">
+				</div>					
+				<div class="form-group">
+					<label for="aNote">Note:</label>
+					<input type="text" class="form-control" id="aNote" ng-model="a.Note">
+				</div>					
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
+
+
+
+<div class="container">
+    <div class="panel panel-default" ng-repeat="a in entity.Contacts | orderBy:'Type'">
+        <div class="panel-heading">
+            <h1 class="panel-title">{{a.Title}}</h1>
+        </div>
+        <div class="panel-body">
+<a ng-show="a.Type==0" class="btn btn-info pull-right" role="button" href="tel:{{a.Value}}"><i class="fa fa-phone" aria-hidden="true"></i> Chiama</a>
+<a ng-show="a.Type==1" class="btn btn-info pull-right" role="button" href="mailto:{{a.Value}}"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
+<a ng-show="a.Type==2" class="btn btn-info pull-right" role="button" href="{{a.Value}}"><i class="fa fa-external-link" aria-hidden="true"></i> Apri link</a>
+<div ng-hide="a.Type==2">{{a.Value}}<p><small>{{a.Note}}</small></p></div>
+<div ng-show="a.Type==2">{{a.Note}}</div>
+</div>
+    </div>
+
+</div>
+<div class="container">
+	<div class="panel panel-default"  ng-repeat="tcal in entity.Calendar | orderBy:'Title'">
+	<div class="panel-heading">{{tcal.Title}}</div>
+	<div class="panel-body">
+		<div class="panel panel-default" ng-repeat="day in tcal.Days | orderBy:'Date'" ng-hide="day.Date < today">
+		<div class="panel-heading">{{day.Date| date:'dd/MM/yyyy'}}
+		<p ng-hide="day.Note==''"><small>{{day.Note}}</small></p>
+		</div>
+		<div class="panel-body" ng-repeat="sch in wday.Schedules | orderBy:'StartTime'">{{sch.StartTime}} - {{sch.EndTime}}<p ng-hide="sch.Note==''"><small>{{sch.Note}}</small></p></div>
+		</div>
+		
+		<div class="panel panel-default" ng-repeat="wday in tcal.WeekDays | orderBy:'WeekDay'">
+		<div class="panel-heading">{{weekdayname[wday.WeekDay]}}</div>
+		<div class="panel-body" ng-repeat="sch in wday.Schedules | orderBy:'StartTime'">{{sch.StartTime}} - {{sch.EndTime}}<p ng-hide="sch.Note==''"><small>{{sch.Note}}</small></p></div>
+		</div>		
+	</div>
+	</div>
+</div>
+  
+</body>
+
+</html>
