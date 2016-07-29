@@ -93,31 +93,34 @@
 <div class="container">
 
 <div class="panel panel-default">
-	<div class="panel-heading">Indirizzi <button class="btn btn-success" ng-click="addAddr" >Aggiungi</button></div>
+	<div class="panel-heading">Indirizzi <button class="btn btn-success" ng-click="addAddr()" >Aggiungi</button></div>
 	<div class="panel-body">
 		<div class="panel panel-default" ng-repeat="a in entity.Adresses">
+		 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ad{{$index}}">{{a.Title}}</button>
+		 <div id="ad{{$index}}" class="collapse in">
 			<div class="panel-body">
 				<div class="form-group">
-					<label for="aTitle">Tipo indirizzo:</label>
-					<input type="text" class="form-control" id="aTitle" ng-model="a.Title">
+					<label for="aTitleAd{{$index}}">Titolo indirizzo:</label>
+					<input type="text" class="form-control" id="aTitleAd{{$index}}" ng-model="a.Title">
 				</div>  
 				<div class="form-group">
-					<label for="aValue">Indirizzo:</label>
-					<input type="text" class="form-control" id="aValue" ng-model="a.Value">
+					<label for="aValueAd{{$index}}">Indirizzo:</label>
+					<input type="text" class="form-control" id="aValueAd{{$index}}" ng-model="a.Value">
 				</div>	
 				<div class="form-group">
-					<label for="aLatitude">Latitude:</label>
-					<input type="text" class="form-control" id="aLatitude" ng-model="a.Latitude">
+					<label for="aLatitude{{$index}}">Latitude:</label>
+					<input type="text" class="form-control" id="aLatitude{{$index}}" ng-model="a.Latitude">
 				</div>	
 				<div class="form-group">
-					<label for="aLongitude">Longitude:</label>
-					<input type="text" class="form-control" id="aLongitude" ng-model="a.Longitude">
+					<label for="aLongitude{{$index}}">Longitude:</label>
+					<input type="text" class="form-control" id="aLongitude{{$index}}" ng-model="a.Longitude">
 				</div>					
 				<div class="form-group">
-					<label for="aNote">Note:</label>
-					<input type="text" class="form-control" id="aNote" ng-model="a.Note">
+					<label for="aNoteAd{{$index}}">Note:</label>
+					<input type="text" class="form-control" id="aNoteAd{{$index}}" ng-model="a.Note">
 				</div>
 				<button class="btn btn-danger" ng-click="removeAddr($index)">Rimuovi</button>				
+				</div>
 			</div>
 		</div>
 	</div>
@@ -126,22 +129,74 @@
 </div>
 
 
+<div class="container">
+
+<div class="panel panel-default">
+	<div class="panel-heading">Contatti <button class="btn btn-success" ng-click="addCt()" >Aggiungi</button></div>
+	<div class="panel-body">
+		<div class="panel panel-default" ng-repeat="a in entity.Contacts">
+		 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ac{{$index}}">{{a.Title}}</button>
+		 <div id="ac{{$index}}" class="collapse in">
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="aTitleCt{{$index}}">Titolo contatto:</label>
+					<input type="text" class="form-control" id="aTitleC{{$index}}t" ng-model="a.Title">
+				</div>  
+				<div class="form-group">
+					<label for="aValueCt{{$index}}">Contatto:</label>
+					<input type="text" class="form-control" id="aValueCt{{$index}}" ng-model="a.Value">
+				</div>	
+				<div class="form-group">
+					<label for="aType{{$index}}">Tipo contatto:</label>
+					<select id="aType{{$index}}" ng-model="a.Type" class="form-control">
+					<option value="0" ng-selected="a.Type==0">Telefono</option>
+					<option value="1" ng-selected="a.Type==1">Email</option>
+					<option value="2" ng-selected="a.Type==2">Link</option>
+					</select>				
+				</div>					
+				<div class="form-group">
+					<label for="aTypex{{$index}}">Tipo contatto:</label>
+					<input type="text" class="form-control" id="aTypex{{$index}}" ng-model="a.Type">
+				</div>					
+				<div class="form-group">
+					<label for="aNoteCt{{$index}}">Note:</label>
+					<input type="text" class="form-control" id="aNoteCt{{$index}}" ng-model="a.Note">
+				</div>
+				<button class="btn btn-danger" ng-click="removeCt($index)">Rimuovi</button>				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+</div>
 
 <div class="container">
-    <div class="panel panel-default" ng-repeat="a in entity.Contacts | orderBy:'Type'">
-        <div class="panel-heading">
-            <h1 class="panel-title">{{a.Title}}</h1>
-        </div>
-        <div class="panel-body">
-<a ng-show="a.Type==0" class="btn btn-info pull-right" role="button" href="tel:{{a.Value}}"><i class="fa fa-phone" aria-hidden="true"></i> Chiama</a>
-<a ng-show="a.Type==1" class="btn btn-info pull-right" role="button" href="mailto:{{a.Value}}"><i class="fa fa-envelope-o" aria-hidden="true"></i> Email</a>
-<a ng-show="a.Type==2" class="btn btn-info pull-right" role="button" href="{{a.Value}}"><i class="fa fa-external-link" aria-hidden="true"></i> Apri link</a>
-<div ng-hide="a.Type==2">{{a.Value}}<p><small>{{a.Note}}</small></p></div>
-<div ng-show="a.Type==2">{{a.Note}}</div>
+
+<div class="panel panel-default">
+	<div class="panel-heading">Note <button class="btn btn-success" ng-click="addNt()" >Aggiungi</button></div>
+	<div class="panel-body">
+		<div class="panel panel-default" ng-repeat="a in entity.Notes">
+		 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#nt{{$index}}">{{a.Title}}</button>
+		 <div id="nt{{$index}}" class="collapse in">
+			<div class="panel-body">
+				<div class="form-group">
+					<label for="aTitleCt{{$index}}">Titolo:</label>
+					<input type="text" class="form-control" id="aTitleC{{$index}}t" ng-model="a.Title">
+				</div>  				
+				<div class="form-group">
+					<label for="aNoteCt{{$index}}">Note:</label>
+					<input type="text" class="form-control" id="aNoteCt{{$index}}" ng-model="a.Note">
+				</div>
+				<button class="btn btn-danger" ng-click="removeNt($index)">Rimuovi</button>				
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-    </div>
 
 </div>
+
 <div class="container">
 	<div class="panel panel-default"  ng-repeat="tcal in entity.Calendar | orderBy:'Title'">
 	<div class="panel-heading">{{tcal.Title}}</div>
