@@ -17,7 +17,7 @@ function MyController($scope, $http) {
     ];	
   
   
- $http.get("https://raw.githubusercontent.com/infocitta/infocitta.github.io/master/desio/asilo_nido/asilo_nido_comunale_via_diaz/entity.json")
+ $http.get("https://raw.githubusercontent.com/infocitta/dataset/master/a015aa39-109b-4e24-b563-91f1c0922980.json")
     .then(function(response) {
         $scope.entity = response.data;
     });

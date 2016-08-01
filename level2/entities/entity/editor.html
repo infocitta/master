@@ -93,11 +93,12 @@
 <div class="container">
 
 <div class="panel panel-default">
-	<div class="panel-heading">Indirizzi <button class="btn btn-success" ng-click="addAddr()" >Aggiungi</button></div>
+	<div class="panel-heading">Indirizzi <button style="margin-left: 10%;" class="btn btn-success" ng-click="addAddr()" >Aggiungi</button><button type="button" class="btn btn-default" data-toggle="collapse" data-target="#fIndirizzi" style="margin-left: 5px;">Mostra/Nascondi</button></div>
+	<div class="panel-collapse collapse" id="fIndirizzi">
 	<div class="panel-body">
 		<div class="panel panel-default" ng-repeat="a in entity.Adresses">
 		 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ad{{$index}}">{{a.Title}}</button>
-		 <div id="ad{{$index}}" class="collapse in">
+		 <div id="ad{{$index}}" class="collapse">
 			<div class="panel-body">
 				<div class="form-group">
 					<label for="aTitleAd{{$index}}">Titolo indirizzo:</label>
@@ -124,6 +125,7 @@
 			</div>
 		</div>
 	</div>
+	</div>
 </div>
 
 </div>
@@ -132,11 +134,12 @@
 <div class="container">
 
 <div class="panel panel-default">
-	<div class="panel-heading">Contatti <button class="btn btn-success" ng-click="addCt()" >Aggiungi</button></div>
-	<div class="panel-body">
+	<div class="panel-heading">Contatti <button  style="margin-left: 10%;" class="btn btn-success" ng-click="addCt()" >Aggiungi</button><button type="button" class="btn btn-default" data-toggle="collapse" data-target="#fContatti" style="margin-left: 5px;">Mostra/Nascondi</button></div>
+	<div class="panel-collapse collapse" id="fContatti">
+	<div class="panel-body" >
 		<div class="panel panel-default" ng-repeat="a in entity.Contacts">
 		 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#ac{{$index}}">{{a.Title}}</button>
-		 <div id="ac{{$index}}" class="collapse in">
+		 <div id="ac{{$index}}" class="collapse">
 			<div class="panel-body">
 				<div class="form-group">
 					<label for="aTitleCt{{$index}}">Titolo contatto:</label>
@@ -153,11 +156,7 @@
 					<option value="1" ng-selected="a.Type==1">Email</option>
 					<option value="2" ng-selected="a.Type==2">Link</option>
 					</select>				
-				</div>					
-				<div class="form-group">
-					<label for="aTypex{{$index}}">Tipo contatto:</label>
-					<input type="text" class="form-control" id="aTypex{{$index}}" ng-model="a.Type">
-				</div>					
+				</div>									
 				<div class="form-group">
 					<label for="aNoteCt{{$index}}">Note:</label>
 					<input type="text" class="form-control" id="aNoteCt{{$index}}" ng-model="a.Note">
@@ -167,18 +166,20 @@
 			</div>
 		</div>
 	</div>
+	</div>
+</div>
 </div>
 
-</div>
 
 <div class="container">
 
 <div class="panel panel-default">
-	<div class="panel-heading">Note <button class="btn btn-success" ng-click="addNt()" >Aggiungi</button></div>
+	<div class="panel-heading">Note <button  style="margin-left: 13%;" class="btn btn-success" ng-click="addNt()" >Aggiungi</button><button type="button" class="btn btn-default" data-toggle="collapse" data-target="#fNote" style="margin-left: 5px;">Mostra/Nascondi</button></div>
+	<div class="panel-collapse collapse" id="fNote">
 	<div class="panel-body">
 		<div class="panel panel-default" ng-repeat="a in entity.Notes">
 		 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#nt{{$index}}">{{a.Title}}</button>
-		 <div id="nt{{$index}}" class="collapse in">
+		 <div id="nt{{$index}}" class="collapse">
 			<div class="panel-body">
 				<div class="form-group">
 					<label for="aTitleCt{{$index}}">Titolo:</label>
@@ -193,9 +194,65 @@
 			</div>
 		</div>
 	</div>
+	</div>
 </div>
 
 </div>
+
+
+<div class="container">
+	<div class="panel panel-default">
+	<div class="panel-heading">Calendari <button  style="margin-left: 7%;" class="btn btn-success" ng-click="addCl()" >Aggiungi</button><button type="button" class="btn btn-default" data-toggle="collapse" data-target="#fCl" style="margin-left: 5px;">Mostra/Nascondi</button></div>
+	<div class="panel-collapse collapse" id="fCl">
+
+	<div class="panel-body">
+			<div class="panel panel-default" ng-repeat="c in entity.Calendar">
+			<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#cl{{$index}}">{{c.Title}}</button>
+			<div id="cl{{$index}}" class="collapse">
+			<div class="panel-heading">
+				<div class="form-group">
+					<label for="aTitleCl{{$index}}">Titolo calendario:</label>
+					<input type="text" class="form-control" id="aTitleC{{$index}}t" ng-model="c.Title">
+				</div>  				
+				<div class="form-group">
+					<label for="aNoteCl{{$index}}">Note:</label>
+					<input type="text" class="form-control" id="aNoteCl{{$index}}" ng-model="c.Note">
+				</div>
+				<button class="btn btn-danger" ng-click="removeCal($index)">Rimuovi</button>				
+			</div>
+			<div class="panel-body">
+				<div class="panel panel-default" ng-repeat="w in c.WeekDays| orderBy:'WeekDay'">
+				<div class="panel-heading">
+					<div class="form-group">
+						<label for="wDay{{$index}}">Giorno settimana:</label>
+						<select id="wDay{{$index}}" ng-model="w.WeekDay" class="form-control">
+						<option value="1" ng-selected="w.WeekDay==1">Lunedì</option>
+						<option value="2" ng-selected="w.WeekDay==2">Martedì</option>
+						<option value="3" ng-selected="w.WeekDay==3">Mercoledì</option>
+						<option value="4" ng-selected="w.WeekDay==4">Giovedì</option>
+						<option value="5" ng-selected="w.WeekDay==5">Venerdì</option>
+						<option value="6" ng-selected="w.WeekDay==6">Sabato</option>
+						<option value="7" ng-selected="w.WeekDay==7">Domenica</option>
+						</select>				
+					</div>				
+				</div>
+				<div class="panel-body">
+					<div class="panel panel-default">
+					<div class="panel-body"> dsf </div>
+					</div>
+					<div class="panel panel-default">
+					<div class="panel-body">A Basic Panel</div>
+					</div>					
+				</div>			
+				</div>			
+			</div>
+			</div>	  
+			</div>	
+	  </div>
+	</div>
+	</div>
+</div>
+
 
 <div class="container">
 	<div class="panel panel-default"  ng-repeat="tcal in entity.Calendar | orderBy:'Title'">
