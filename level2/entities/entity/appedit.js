@@ -49,6 +49,19 @@ $scope.removeCt = function(index) {
 
 //Note
 
+$scope.addCl=function () {
+	$scope.entity.Calendar.push({ Title: 'Nome Calendario', Note: '', WeekDays: [], Days: [] });
+}
+	
+$scope.removeCl = function(index) {
+	if (confirm('Corfema eliminazione?')) {
+		$scope.entity.Calendar.splice(index, 1);     
+	} 	 
+}
+
+
+//Testa Calendario
+
 $scope.addNt=function () {
 	$scope.entity.Notes.push({Title: 'Note',Value: ''    });
 }
@@ -58,6 +71,8 @@ $scope.removeNt = function(index) {
 		$scope.entity.Notes.splice(index, 1);     
 	} 	 
 }
+
+
 	
   $scope.pageChangeHandler = function(num) {
       

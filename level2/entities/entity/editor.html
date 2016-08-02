@@ -212,13 +212,13 @@
 			<div class="panel-heading">
 				<div class="form-group">
 					<label for="aTitleCl{{$index}}">Titolo calendario:</label>
-					<input type="text" class="form-control" id="aTitleC{{$index}}t" ng-model="c.Title">
+					<input type="text" class="form-control" id="aTitleC{{$index}}" ng-model="c.Title">
 				</div>  				
 				<div class="form-group">
 					<label for="aNoteCl{{$index}}">Note:</label>
 					<input type="text" class="form-control" id="aNoteCl{{$index}}" ng-model="c.Note">
 				</div>
-				<button class="btn btn-danger" ng-click="removeCal($index)">Rimuovi</button>				
+				<button class="btn btn-danger" ng-click="removeCl($index)">Rimuovi</button>				
 			</div>
 			<div class="panel-body">
 				<div class="panel panel-default" ng-repeat="w in c.WeekDays| orderBy:'WeekDay'">
@@ -237,11 +237,28 @@
 					</div>				
 				</div>
 				<div class="panel-body">
-					<div class="panel panel-default">
-					<div class="panel-body"> dsf </div>
+					<div class="panel panel-default" ng-repeat="sc in w.Schedules| orderBy:'StartTime'">
+					<div class="panel-body">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="Dalle{{$index}}">Dalle:</label>
+								<input type="text" class="form-control" id="Dalle{{$index}}" ng-model="sc.StartTime">
+							</div> 
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="Alle{{$index}}">Alle:</label>
+								<input type="text" class="form-control" id="Alle{{$index}}" ng-model="sc.EndTime">
+							</div> 
+						</div>	
 					</div>
-					<div class="panel panel-default">
-					<div class="panel-body">A Basic Panel</div>
+							<div class="form-group">
+								<label for="wNote{{$index}}">Note:</label>
+								<input type="text" class="form-control" id="wNote{{$index}}" ng-model="sc.Note">
+							</div> 						
+					
+					</div>
 					</div>					
 				</div>			
 				</div>			
