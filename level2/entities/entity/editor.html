@@ -274,25 +274,6 @@
 </div>
 
 
-<div class="container">
-	<div class="panel panel-default"  ng-repeat="tcal in entity.Calendar | orderBy:'Title'">
-	<div class="panel-heading">{{tcal.Title}}</div>
-	<div class="panel-body">
-		<div class="panel panel-default" ng-repeat="day in tcal.Days | orderBy:'Date'" ng-hide="day.Date < today">
-		<div class="panel-heading">{{day.Date| date:'dd/MM/yyyy'}}
-		<p ng-hide="day.Note==''"><small>{{day.Note}}</small></p>
-		</div>
-		<div class="panel-body" ng-repeat="sch in wday.Schedules | orderBy:'StartTime'">{{sch.StartTime}} - {{sch.EndTime}}<p ng-hide="sch.Note==''"><small>{{sch.Note}}</small></p></div>
-		</div>
-		
-		<div class="panel panel-default" ng-repeat="wday in tcal.WeekDays | orderBy:'WeekDay'">
-		<div class="panel-heading">{{weekdayname[wday.WeekDay]}}</div>
-		<div class="panel-body" ng-repeat="sch in wday.Schedules | orderBy:'StartTime'">{{sch.StartTime}} - {{sch.EndTime}}<p ng-hide="sch.Note==''"><small>{{sch.Note}}</small></p></div>
-		</div>		
-	</div>
-	</div>
-</div>
-  
 </body>
 
 </html>
