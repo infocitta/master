@@ -49,6 +49,22 @@ $scope.removeCt = function(index) {
 
 //Note
 
+$scope.addNt=function () {
+	$scope.entity.Notes.push({Title: 'Note',Value: ''    });
+}
+	
+$scope.removeNt = function(index) {
+	if (confirm('Corfema eliminazione?')) {
+		$scope.entity.Notes.splice(index, 1);     
+	} 	 
+}
+
+
+//Testa Calendario
+
+
+
+
 $scope.addCl=function () {
 	$scope.entity.Calendar.push({ Title: 'Nome Calendario', Note: '', WeekDays: [], Days: [] });
 }
@@ -59,18 +75,23 @@ $scope.removeCl = function(index) {
 	} 	 
 }
 
+//Giorni settimana
 
-//Testa Calendario
-
-$scope.addNt=function () {
-	$scope.entity.Notes.push({Title: 'Note',Value: ''    });
+$scope.addWd=function (c) {
+	c.WeekDays.push({ "WeekDay": 1, "Schedules": [] });
 }
 	
-$scope.removeNt = function(index) {
+$scope.removeWd = function(c,index) {
 	if (confirm('Corfema eliminazione?')) {
-		$scope.entity.Notes.splice(index, 1);     
+		c.WeekDays.splice(index, 1);     
 	} 	 
 }
+
+
+
+
+
+
 
 
 	

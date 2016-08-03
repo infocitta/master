@@ -93,7 +93,7 @@
 <div class="container">
 
 <div class="panel panel-default">
-	<div class="panel-heading">Indirizzi <button style="margin-left: 10%;" class="btn btn-success" ng-click="addAddr()" >Aggiungi</button><button type="button" class="btn btn-default" data-toggle="collapse" data-target="#fIndirizzi" style="margin-left: 5px;">Mostra/Nascondi</button></div>
+	<div class="panel-heading">Indirizzi <br/><button class="btn btn-success" ng-click="addAddr()" >Aggiungi</button><button type="button" style="float: right;" class="btn btn-default" data-toggle="collapse" data-target="#fIndirizzi" style="margin-left: 5px;">Mostra/Nascondi</button></div>
 	<div class="panel-collapse collapse" id="fIndirizzi">
 	<div class="panel-body">
 		<div class="panel panel-default" ng-repeat="a in entity.Adresses">
@@ -134,7 +134,7 @@
 <div class="container">
 
 <div class="panel panel-default">
-	<div class="panel-heading">Contatti <button  style="margin-left: 10%;" class="btn btn-success" ng-click="addCt()" >Aggiungi</button><button type="button" class="btn btn-default" data-toggle="collapse" data-target="#fContatti" style="margin-left: 5px;">Mostra/Nascondi</button></div>
+	<div class="panel-heading">Contatti<br/><button class="btn btn-success" ng-click="addCt()" >Aggiungi</button><button style="float: right;" type="button" class="btn btn-default" data-toggle="collapse" data-target="#fContatti" style="margin-left: 5px;">Mostra/Nascondi</button></div>
 	<div class="panel-collapse collapse" id="fContatti">
 	<div class="panel-body" >
 		<div class="panel panel-default" ng-repeat="a in entity.Contacts">
@@ -174,7 +174,7 @@
 <div class="container">
 
 <div class="panel panel-default">
-	<div class="panel-heading">Note <button  style="margin-left: 13%;" class="btn btn-success" ng-click="addNt()" >Aggiungi</button><button type="button" class="btn btn-default" data-toggle="collapse" data-target="#fNote" style="margin-left: 5px;">Mostra/Nascondi</button></div>
+	<div class="panel-heading">Note<br/><button   class="btn btn-success" ng-click="addNt()" >Aggiungi</button><button type="button" style="float: right;" class="btn btn-default" data-toggle="collapse" data-target="#fNote" style="margin-left: 5px;">Mostra/Nascondi</button></div>
 	<div class="panel-collapse collapse" id="fNote">
 	<div class="panel-body">
 		<div class="panel panel-default" ng-repeat="a in entity.Notes">
@@ -202,7 +202,7 @@
 
 <div class="container">
 	<div class="panel panel-default">
-	<div class="panel-heading">Calendari <button  style="margin-left: 7%;" class="btn btn-success" ng-click="addCl()" >Aggiungi</button><button type="button" class="btn btn-default" data-toggle="collapse" data-target="#fCl" style="margin-left: 5px;">Mostra/Nascondi</button></div>
+	<div class="panel-heading">Calendari<br/><button  class="btn btn-success" ng-click="addCl()" >Aggiungi</button><button type="button" style="float: right;"  class="btn btn-default" data-toggle="collapse" data-target="#fCl" style="margin-left: 5px;">Mostra/Nascondi</button></div>
 	<div class="panel-collapse collapse" id="fCl">
 
 	<div class="panel-body">
@@ -218,7 +218,8 @@
 					<label for="aNoteCl{{$index}}">Note:</label>
 					<input type="text" class="form-control" id="aNoteCl{{$index}}" ng-model="c.Note">
 				</div>
-				<button class="btn btn-danger" ng-click="removeCl($index)">Rimuovi</button>				
+				<button class="btn btn-danger" ng-click="removeCl($index)">Rimuovi calendario</button>				
+				<button  class="btn btn-success" ng-click="addWd(c)" >Aggiungi giorno della settimana</button>
 			</div>
 			<div class="panel-body">
 				<div class="panel panel-default" ng-repeat="w in c.WeekDays| orderBy:'WeekDay'">
@@ -234,7 +235,8 @@
 						<option value="6" ng-selected="w.WeekDay==6">Sabato</option>
 						<option value="7" ng-selected="w.WeekDay==7">Domenica</option>
 						</select>				
-					</div>				
+					</div>
+				<button class="btn btn-danger" ng-click="removeWd(c,$index)">Rimuovi</button>						
 				</div>
 				<div class="panel-body">
 					<div class="panel panel-default" ng-repeat="sc in w.Schedules| orderBy:'StartTime'">
@@ -257,7 +259,7 @@
 								<label for="wNote{{$index}}">Note:</label>
 								<input type="text" class="form-control" id="wNote{{$index}}" ng-model="sc.Note">
 							</div> 						
-					
+					<button class="btn btn-danger" ng-click="removeWdT($index)">Rimuovi</button>	
 					</div>
 					</div>					
 				</div>			
