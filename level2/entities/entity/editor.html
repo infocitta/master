@@ -236,7 +236,8 @@
 						<option value="7" ng-selected="w.WeekDay==7">Domenica</option>
 						</select>				
 					</div>
-				<button class="btn btn-danger" ng-click="removeWd(c,$index)">Rimuovi</button>						
+				<button class="btn btn-danger" ng-click="removeWd(c,$index)">Rimuovi</button>
+				<button  class="btn btn-success" ng-click="addWdH(w)" >Aggiungi orario</button>				
 				</div>
 				<div class="panel-body">
 					<div class="panel panel-default" ng-repeat="sc in w.Schedules| orderBy:'StartTime'">
@@ -259,7 +260,7 @@
 								<label for="wNote{{$index}}">Note:</label>
 								<input type="text" class="form-control" id="wNote{{$index}}" ng-model="sc.Note">
 							</div> 						
-					<button class="btn btn-danger" ng-click="removeWdT($index)">Rimuovi</button>	
+					<button class="btn btn-danger" ng-click="removeWdH(w,$index)">Rimuovi</button>	
 					</div>
 					</div>					
 				</div>			

@@ -87,7 +87,17 @@ $scope.removeWd = function(c,index) {
 	} 	 
 }
 
+//Orario settimana
 
+$scope.addWdH=function (c) {
+	c.Schedules.push({ "WeekDay": 1, "Schedules": [] });
+}
+	
+$scope.removeWdH = function(c,index) {
+	if (confirm('Corfema eliminazione?')) {
+		c.Schedules.splice(index, 1);     
+	} 	 
+}
 
 
 
