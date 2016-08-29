@@ -70,7 +70,7 @@
                 <img class="img-responsive" src="logo_small.png" style="float: left;height:80px;width:80px;vertical-align: text-top;"/>
            <h1>InfoCittà</h1>
                 <p>Le informazioni della tua città  in un unico posto</p>
-                  <div class="fb-like" data-href="http://infocitta.info" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
+                  <div class="fb-like" data-href="https://infocitta.info" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true"></div>
             </div>
         </div>
 
@@ -90,7 +90,7 @@
 
 <div class="list-group">
 
-<a dir-paginate="item in items | orderBy:'Value' | filter:q | itemsPerPage: pageSize" current-page="currentPage"  href="{{ item.Alias }}\" class="list-group-item"><span><strong>{{ item.Value }}</strong></span></a>
+<a dir-paginate="item in items | orderBy:'Value' | filter:q | itemsPerPage: pageSize" current-page="currentPage"  ng-href="{{ item.Alias }}\" class="list-group-item"><span><strong>{{ item.Value }}</strong></span></a>
 
 </div>
 		  
