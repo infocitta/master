@@ -88,7 +88,7 @@
 
 <div class="list-group">
 
-<a dir-paginate="item in items | orderBy:'Value' | filter:q | itemsPerPage: pageSize" current-page="currentPage"  href="{{ item.Alias }}\" class="list-group-item"><span><strong>{{ item.Value }}</strong></span></a>
+<a dir-paginate="item in items | orderBy:'Value' | filter:q | itemsPerPage: pageSize" current-page="currentPage"  ng-href="{{ item.Alias }}\" class="list-group-item"><span><strong>{{ item.Value }}</strong></span></a>
 
 </div>
 		  
