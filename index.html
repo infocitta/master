@@ -86,7 +86,21 @@
               <label for="search">Ricerca:</label>
               <input ng-model="q" id="search" class="form-control" placeholder="Testo ricerca">
             </div>
-
+          <div class="col-xs-8">
+              <label for="search">Ricerca con Goole:</label>
+			<script>
+			  (function() {
+			    var cx = '003995625191502533657:pfc7merqg3k';
+			    var gcse = document.createElement('script');
+			    gcse.type = 'text/javascript';
+			    gcse.async = true;
+			    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+			    var s = document.getElementsByTagName('script')[0];
+			    s.parentNode.insertBefore(gcse, s);
+			  })();
+			</script>
+<gcse:search></gcse:search>              
+            </div>
           </div>
           <br>
 
