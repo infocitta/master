@@ -6,3 +6,6 @@
 .modal.fade.in {
   z-index: 1050;
 }
+.mdl-navigation__link .material-icons {
+  margin-right: 32px;
+}
