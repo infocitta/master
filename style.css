@@ -9,6 +9,6 @@
 .mdl-navigation__link .material-icons {
   margin-right: 32px;
 }
-   a {
-      text-decoration:none;
-   }
+.mdl-navigation__link {
+  text-decoration:none;
+} 
